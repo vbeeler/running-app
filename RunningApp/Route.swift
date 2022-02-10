@@ -25,5 +25,5 @@ class Route: ObservableObject {
             self.origin = origin
             self.endpoint = endpoint
             self.route = route
-        }
+    }
 }

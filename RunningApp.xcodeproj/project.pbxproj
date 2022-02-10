@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2637B5D227B4BE5B003CDD20 /* TerrainPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5D127B4BE5B003CDD20 /* TerrainPickerView.swift */; };
+		2637B5D427B4C502003CDD20 /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5D327B4C502003CDD20 /* Terrain.swift */; };
+		2637B5D827B4C848003CDD20 /* TerrainTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5D727B4C848003CDD20 /* TerrainTypes.swift */; };
+		2637B5DA27B4C9B8003CDD20 /* ChooseLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */; };
 		26800F8727A489920049C2DC /* RunningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800F8627A489920049C2DC /* RunningApp.swift */; };
 		26800F8B27A489960049C2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26800F8A27A489960049C2DC /* Assets.xcassets */; };
 		26800F8E27A489960049C2DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26800F8D27A489960049C2DC /* Preview Assets.xcassets */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2637B5D127B4BE5B003CDD20 /* TerrainPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainPickerView.swift; sourceTree = "<group>"; };
+		2637B5D327B4C502003CDD20 /* Terrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
+		2637B5D727B4C848003CDD20 /* TerrainTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainTypes.swift; sourceTree = "<group>"; };
+		2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationView.swift; sourceTree = "<group>"; };
 		26800F8327A489920049C2DC /* RunningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26800F8627A489920049C2DC /* RunningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningApp.swift; sourceTree = "<group>"; };
 		26800F8A27A489960049C2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +117,10 @@
 				26800FB627A4CFB30049C2DC /* Map */,
 				26800F8A27A489960049C2DC /* Assets.xcassets */,
 				26800F8C27A489960049C2DC /* Preview Content */,
+				2637B5D127B4BE5B003CDD20 /* TerrainPickerView.swift */,
+				2637B5D327B4C502003CDD20 /* Terrain.swift */,
+				2637B5D727B4C848003CDD20 /* TerrainTypes.swift */,
+				2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */,
 			);
 			path = RunningApp;
 			sourceTree = "<group>";
@@ -282,7 +294,11 @@
 				26800FB827A4CFC80049C2DC /* MapViewModel.swift in Sources */,
 				26800FBC27A597320049C2DC /* Route.swift in Sources */,
 				26800FB527A4CEE70049C2DC /* MapView.swift in Sources */,
+				2637B5D827B4C848003CDD20 /* TerrainTypes.swift in Sources */,
+				2637B5DA27B4C9B8003CDD20 /* ChooseLocationView.swift in Sources */,
+				2637B5D427B4C502003CDD20 /* Terrain.swift in Sources */,
 				26800F8727A489920049C2DC /* RunningApp.swift in Sources */,
+				2637B5D227B4BE5B003CDD20 /* TerrainPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
