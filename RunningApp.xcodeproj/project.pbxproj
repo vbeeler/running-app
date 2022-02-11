@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2637B5D227B4BE5B003CDD20 /* TerrainPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5D127B4BE5B003CDD20 /* TerrainPickerView.swift */; };
-		2637B5D427B4C502003CDD20 /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5D327B4C502003CDD20 /* Terrain.swift */; };
 		2637B5D827B4C848003CDD20 /* TerrainTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5D727B4C848003CDD20 /* TerrainTypes.swift */; };
 		2637B5DA27B4C9B8003CDD20 /* ChooseLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */; };
+		2637B5DC27B5755B003CDD20 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5DB27B5755B003CDD20 /* LocationManager.swift */; };
 		26800F8727A489920049C2DC /* RunningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800F8627A489920049C2DC /* RunningApp.swift */; };
 		26800F8B27A489960049C2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26800F8A27A489960049C2DC /* Assets.xcassets */; };
 		26800F8E27A489960049C2DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26800F8D27A489960049C2DC /* Preview Assets.xcassets */; };
@@ -19,7 +19,6 @@
 		26800FA427A489970049C2DC /* RunningAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FA327A489970049C2DC /* RunningAppUITestsLaunchTests.swift */; };
 		26800FB327A4C6B10049C2DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FB227A4C6B10049C2DC /* HomeView.swift */; };
 		26800FB527A4CEE70049C2DC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FB427A4CEE70049C2DC /* MapView.swift */; };
-		26800FB827A4CFC80049C2DC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FB727A4CFC80049C2DC /* MapViewModel.swift */; };
 		26800FBA27A596910049C2DC /* CreateRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FB927A596910049C2DC /* CreateRouteView.swift */; };
 		26800FBC27A597320049C2DC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FBB27A597320049C2DC /* Route.swift */; };
 /* End PBXBuildFile section */
@@ -43,9 +42,9 @@
 
 /* Begin PBXFileReference section */
 		2637B5D127B4BE5B003CDD20 /* TerrainPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainPickerView.swift; sourceTree = "<group>"; };
-		2637B5D327B4C502003CDD20 /* Terrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
 		2637B5D727B4C848003CDD20 /* TerrainTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainTypes.swift; sourceTree = "<group>"; };
 		2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationView.swift; sourceTree = "<group>"; };
+		2637B5DB27B5755B003CDD20 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		26800F8327A489920049C2DC /* RunningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26800F8627A489920049C2DC /* RunningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningApp.swift; sourceTree = "<group>"; };
 		26800F8A27A489960049C2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +56,6 @@
 		26800FA327A489970049C2DC /* RunningAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		26800FB227A4C6B10049C2DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26800FB427A4CEE70049C2DC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		26800FB727A4CFC80049C2DC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		26800FB927A596910049C2DC /* CreateRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouteView.swift; sourceTree = "<group>"; };
 		26800FBB27A597320049C2DC /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +116,6 @@
 				26800F8A27A489960049C2DC /* Assets.xcassets */,
 				26800F8C27A489960049C2DC /* Preview Content */,
 				2637B5D127B4BE5B003CDD20 /* TerrainPickerView.swift */,
-				2637B5D327B4C502003CDD20 /* Terrain.swift */,
 				2637B5D727B4C848003CDD20 /* TerrainTypes.swift */,
 				2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */,
 			);
@@ -154,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				26800FB427A4CEE70049C2DC /* MapView.swift */,
-				26800FB727A4CFC80049C2DC /* MapViewModel.swift */,
+				2637B5DB27B5755B003CDD20 /* LocationManager.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -291,12 +288,11 @@
 			files = (
 				26800FB327A4C6B10049C2DC /* HomeView.swift in Sources */,
 				26800FBA27A596910049C2DC /* CreateRouteView.swift in Sources */,
-				26800FB827A4CFC80049C2DC /* MapViewModel.swift in Sources */,
+				2637B5DC27B5755B003CDD20 /* LocationManager.swift in Sources */,
 				26800FBC27A597320049C2DC /* Route.swift in Sources */,
 				26800FB527A4CEE70049C2DC /* MapView.swift in Sources */,
 				2637B5D827B4C848003CDD20 /* TerrainTypes.swift in Sources */,
 				2637B5DA27B4C9B8003CDD20 /* ChooseLocationView.swift in Sources */,
-				2637B5D427B4C502003CDD20 /* Terrain.swift in Sources */,
 				26800F8727A489920049C2DC /* RunningApp.swift in Sources */,
 				2637B5D227B4BE5B003CDD20 /* TerrainPickerView.swift in Sources */,
 			);
@@ -466,6 +462,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "location-services gps";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,6 +493,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "location-services gps";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

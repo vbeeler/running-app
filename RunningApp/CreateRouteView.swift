@@ -9,10 +9,12 @@ import SwiftUI
 import MapKit
 
 struct CreateRouteView: View {
+    var locationManager : LocationManager
+    
     @State private var selectedActivity = "RUN"
     @State private var milesSelection = 4
     @State private var hundredthMileSelection = 0
-    @StateObject var terrainTypeSelections: TerrainTypes = TerrainTypes(terrains: [Terrain(name: "Road"), Terrain(name: "Dirt"), Terrain(name: "Grass"), Terrain(name: "Sand")])
+    @StateObject var terrainTypeSelections: TerrainTypes = TerrainTypes()
     @State private var startingLocationSelection : CLLocationCoordinate2D = MapDetails.defaultLocation
     @State private var endingLocationSelection : CLLocationCoordinate2D = MapDetails.defaultLocation
     
@@ -61,13 +63,11 @@ struct CreateRouteView: View {
                         }
                         
                         Section {
-                            NavigationLink(destination: TerrainPickerView(terrainTypes: terrainTypeSelections)) {
-                                Text("Terrain Types")
-                            }
+                            TerrainPickerView(terrainTypes: terrainTypeSelections)
                         }
                         
                         Section {
-                            NavigationLink(destination: ChooseLocationView(startingLocation: startingLocationSelection, endingLocation: endingLocationSelection)) {
+                            NavigationLink(destination: ChooseLocationView(locationManager: locationManager, startingLocation: startingLocationSelection, endingLocation: endingLocationSelection)) {
                                 HStack {
                                     Text("Locations")
                                     Spacer()
@@ -87,7 +87,9 @@ struct CreateRouteView: View {
         }
     }
     
-    init() {
+    init(_ locationManager: LocationManager) {
+        self.locationManager = locationManager
+        
         //this will change the font size
         UISegmentedControl.appearance().setTitleTextAttributes([.font : UIFont.preferredFont(forTextStyle: .largeTitle)], for: .normal)
 
@@ -100,6 +102,6 @@ struct CreateRouteView: View {
 
 struct CreateRouteView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateRouteView()
+        CreateRouteView(LocationManager())
     }
 }

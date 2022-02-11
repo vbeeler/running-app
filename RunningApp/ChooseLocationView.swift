@@ -9,17 +9,18 @@ import SwiftUI
 import MapKit
 
 struct ChooseLocationView: View {
+    @StateObject var locationManager : LocationManager
+    
     @State var startingLocation : CLLocationCoordinate2D
     @State var endingLocation : CLLocationCoordinate2D
     
     var body: some View {
-        MapView()
+        MapView(locationManager: locationManager)
     }
 }
 
 struct ChooseLocationView_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseLocationView(startingLocation: CLLocationCoordinate2D(latitude: 38.8977, longitude: 77.0365),
-                           endingLocation: CLLocationCoordinate2D(latitude: 38.8977, longitude: 77.0365))
+        ChooseLocationView(locationManager: LocationManager(), startingLocation: CLLocationCoordinate2D(latitude: 38.8977, longitude: 77.0365), endingLocation: CLLocationCoordinate2D(latitude: 38.8977, longitude: 77.0365))
     }
 }

@@ -8,33 +8,68 @@
 import SwiftUI
 
 struct TerrainPickerView: View {
-    @StateObject var terrainTypes : TerrainTypes
+    @ObservedObject var terrainTypes : TerrainTypes
     
     var body: some View{
         VStack {
+            HStack {
+                Text("Terrain Types")
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
             
-            Text("Select the terrain types you would like:")
-                .fontWeight(.bold)
-            
-            List {
-                ForEach(0..<terrainTypes.terrains.count){ index in
-                    HStack {
-                        Button(action: {
-                            terrainTypes.terrains[index].isSelected = terrainTypes.terrains[index].isSelected ? false : true
-                    }) {
-                            HStack{
-                                if terrainTypes.terrains[index].isSelected {
-                                    Image(systemName: "checkmark.circle.fill")
-                                            .foregroundColor(.green)
-                                } else {
-                                    Image(systemName: "circle")
-                                            .foregroundColor(.primary)
-                                }
-                                Text(terrainTypes.terrains[index].name)
-                            }
-                        }.buttonStyle(BorderlessButtonStyle())
+            HStack {
+                Button(action: { terrainTypes.road = terrainTypes.road ? false : true }) {
+                    HStack{
+                        if terrainTypes.road {
+                            Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.green)
+                        } else {
+                            Image(systemName: "circle")
+                                    .foregroundColor(.primary)
+                        }
+                        Text("Road")
                     }
-                }
+                }.buttonStyle(BorderlessButtonStyle())
+                
+                Button(action: { terrainTypes.dirt = terrainTypes.dirt ? false : true }) {
+                    HStack{
+                        if terrainTypes.dirt {
+                            Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.green)
+                        } else {
+                            Image(systemName: "circle")
+                                    .foregroundColor(.primary)
+                        }
+                        Text("Dirt")
+                    }
+                }.buttonStyle(BorderlessButtonStyle())
+                
+                Button(action: { terrainTypes.grass = terrainTypes.grass ? false : true }) {
+                    HStack{
+                        if terrainTypes.grass {
+                            Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.green)
+                        } else {
+                            Image(systemName: "circle")
+                                    .foregroundColor(.primary)
+                        }
+                        Text("Grass")
+                    }
+                }.buttonStyle(BorderlessButtonStyle())
+                
+                Button(action: { terrainTypes.sand = terrainTypes.sand ? false : true }) {
+                    HStack{
+                        if terrainTypes.sand {
+                            Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.green)
+                        } else {
+                            Image(systemName: "circle")
+                                    .foregroundColor(.primary)
+                        }
+                        Text("Sand")
+                    }
+                }.buttonStyle(BorderlessButtonStyle())
             }
         }
     }
@@ -42,6 +77,6 @@ struct TerrainPickerView: View {
 
 struct TerrainPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        TerrainPickerView(terrainTypes: TerrainTypes(terrains: [Terrain(name: "Road"), Terrain(name: "Dirt"), Terrain(name: "Grass"), Terrain(name: "Sand")]))
+        TerrainPickerView(terrainTypes: TerrainTypes())
     }
 }

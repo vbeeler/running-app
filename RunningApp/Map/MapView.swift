@@ -9,20 +9,17 @@ import MapKit
 import SwiftUI
 
 struct MapView: View {
-    @StateObject private var viewModel = MapViewModel()
+    @StateObject var locationManager : LocationManager
     
     var body: some View {
-        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
+        Map(coordinateRegion: $locationManager.region, showsUserLocation: true)
             .ignoresSafeArea()
             .accentColor(Color(.systemRed))
-            .onAppear {
-                viewModel.checkIfLocationServicesIsEnabled()
-            }
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(locationManager: LocationManager())
     }
 }

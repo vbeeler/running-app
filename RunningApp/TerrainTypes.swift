@@ -8,9 +8,8 @@
 import SwiftUI
 
 class TerrainTypes : ObservableObject{
-    @Published var terrains : [Terrain]
-    
-    init(terrains: [Terrain]) {
-        self.terrains = terrains
-    }
+    @Published var road : Bool = true
+    @Published var dirt : Bool = true
+    @Published var grass : Bool = true
+    @Published var sand : Bool = true
 }
