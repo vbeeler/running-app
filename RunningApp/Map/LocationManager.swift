@@ -18,10 +18,14 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published var region = MKCoordinateRegion(center: MapDetails.defaultLocation, span: MapDetails.defaultSpan)
     @Published var location: CLLocationCoordinate2D = MapDetails.defaultLocation
+    @Published var speed: Double
 
     override init() {
+        self.speed = 0
         super.init()
         locManager.delegate = self
+        locManager.activityType = CLActivityType.fitness
+        locManager.desiredAccuracy = kCLLocationAccuracyBest
     }
 
     func requestLocation() {
@@ -33,8 +37,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if locations.first?.coordinate != nil {
+        if !locations.isEmpty {
             location = locations.first!.coordinate
+            speed = locations.first!.speed
         }
     }
     

@@ -13,7 +13,7 @@ struct RecordView: View {
     var body: some View {
         ZStack {
             MapView(locationManager: locationManager)
-            Button(action: recordRun) {
+            NavigationLink(destination: RunView(locationManager: locationManager)) {
                 HStack {
                     Text("Run")
                         .fontWeight(.semibold)
@@ -29,10 +29,6 @@ struct RecordView: View {
             }
             .offset(x:0,y:200)
         }
-    }
-    
-    func recordRun() {
-        print("Recording run...")
     }
 }
 

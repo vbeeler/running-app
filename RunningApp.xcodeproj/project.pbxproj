@@ -23,6 +23,8 @@
 		26800FBA27A596910049C2DC /* CreateRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FB927A596910049C2DC /* CreateRouteView.swift */; };
 		26800FBC27A597320049C2DC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FBB27A597320049C2DC /* Route.swift */; };
 		26DC4CF027F7573F00BE0EB4 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4CEF27F7573F00BE0EB4 /* RecordView.swift */; };
+		26DC4CF227F75FAA00BE0EB4 /* RunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4CF127F75FAA00BE0EB4 /* RunView.swift */; };
+		26DC4CF427F7817800BE0EB4 /* ActivityInfoDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4CF327F7817800BE0EB4 /* ActivityInfoDisplay.swift */; };
 		26F37EE327D1A63100DA8CDC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F37EE227D1A63000DA8CDC /* SettingsView.swift */; };
 		26F37EE527DAFC8700DA8CDC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F37EE427DAFC8700DA8CDC /* Settings.swift */; };
 		4F8C6FBB1E5D0AD657EA002D /* Pods_RunningApp_RunningAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE2DB0C0DCE8414071E4F9D /* Pods_RunningApp_RunningAppUITests.framework */; };
@@ -69,6 +71,8 @@
 		26800FB927A596910049C2DC /* CreateRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouteView.swift; sourceTree = "<group>"; };
 		26800FBB27A597320049C2DC /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		26DC4CEF27F7573F00BE0EB4 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		26DC4CF127F75FAA00BE0EB4 /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
+		26DC4CF327F7817800BE0EB4 /* ActivityInfoDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInfoDisplay.swift; sourceTree = "<group>"; };
 		26F37EE227D1A63000DA8CDC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		26F37EE427DAFC8700DA8CDC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		50E0B8BDE7F471C8C9318BC4 /* Pods_RunningAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunningAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +161,8 @@
 				26F37EE227D1A63000DA8CDC /* SettingsView.swift */,
 				26F37EE427DAFC8700DA8CDC /* Settings.swift */,
 				26DC4CEF27F7573F00BE0EB4 /* RecordView.swift */,
+				26DC4CF127F75FAA00BE0EB4 /* RunView.swift */,
+				26DC4CF327F7817800BE0EB4 /* ActivityInfoDisplay.swift */,
 			);
 			path = RunningApp;
 			sourceTree = "<group>";
@@ -455,7 +461,9 @@
 				26800FB327A4C6B10049C2DC /* HomeView.swift in Sources */,
 				26DC4CF027F7573F00BE0EB4 /* RecordView.swift in Sources */,
 				26800FBA27A596910049C2DC /* CreateRouteView.swift in Sources */,
+				26DC4CF227F75FAA00BE0EB4 /* RunView.swift in Sources */,
 				2637B5DC27B5755B003CDD20 /* LocationManager.swift in Sources */,
+				26DC4CF427F7817800BE0EB4 /* ActivityInfoDisplay.swift in Sources */,
 				26800FBC27A597320049C2DC /* Route.swift in Sources */,
 				26800FB527A4CEE70049C2DC /* MapView.swift in Sources */,
 				26F37EE327D1A63100DA8CDC /* SettingsView.swift in Sources */,
