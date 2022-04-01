@@ -10,6 +10,7 @@ import MapKit
 
 struct CreateRouteView: View {
     var locationManager : LocationManager
+    var settings : Settings
     
     @State private var selectedActivity = "RUN"
     @State private var milesSelection = 4
@@ -17,6 +18,8 @@ struct CreateRouteView: View {
     @StateObject var terrainTypeSelections: TerrainTypes = TerrainTypes()
     @State private var startingLocationSelection : CLLocationCoordinate2D = MapDetails.defaultLocation
     @State private var endingLocationSelection : CLLocationCoordinate2D = MapDetails.defaultLocation
+    @State private var altitudeSelection : Float = 0
+    @State private var isEditingAltitude = false
     
     private var activities = ["RUN", "BIKE"]
     private var miles = [Int](0..<100)
@@ -58,7 +61,7 @@ struct CreateRouteView: View {
                                 .compositingGroup()
                                 .clipped()
                                 
-                                Text(" miles")
+                                Text(" \(settings.distanceUnits)")
                             }
                         }
                         
@@ -75,10 +78,31 @@ struct CreateRouteView: View {
                                 }
                             }
                         }
+                        
+                        Section {
+                            VStack {
+                                HStack {
+                                    Text("Altitude Change")
+                                    
+                                    Spacer()
+                                    
+                                    
+                                    Text("\(altitudeSelection, specifier: "%.1f")\(settings.altitudeUnits)")
+                                }
+                                
+                                Slider(
+                                    value: $altitudeSelection,
+                                            in: 0...100,
+                                            onEditingChanged: { editing in
+                                                isEditingAltitude = editing
+                                            }
+                                        )
+                            }
+                        }
                     }
 
                     Section {
-                        Button("Save changes") {
+                        Button("CREATE ROUTE") {
                             // activate theme!
                         }
                     }
@@ -87,8 +111,9 @@ struct CreateRouteView: View {
         }
     }
     
-    init(_ locationManager: LocationManager) {
+    init(_ locationManager: LocationManager, _ settings: Settings) {
         self.locationManager = locationManager
+        self.settings = settings
         
         //this will change the font size
         UISegmentedControl.appearance().setTitleTextAttributes([.font : UIFont.preferredFont(forTextStyle: .largeTitle)], for: .normal)
@@ -102,6 +127,6 @@ struct CreateRouteView: View {
 
 struct CreateRouteView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateRouteView(LocationManager())
+        CreateRouteView(LocationManager(), Settings())
     }
 }

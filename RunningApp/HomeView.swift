@@ -10,25 +10,40 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var locationManager : LocationManager = LocationManager()
+    var settings : Settings
     
     var body: some View {
-        TabView {
-            MapView(locationManager: locationManager)
-                .tabItem {
-                    Label("Record", systemImage: "record.circle")
+        NavigationView {
+            TabView {
+                RecordView(locationManager: locationManager)
+                    .tabItem {
+                        Label("Record", systemImage: "record.circle")
                 }
-            
-            CreateRouteView(locationManager)
-            // change to picture of route
-                .tabItem {
-                    Label("Create", systemImage: "mappin.and.ellipse")
+                
+                CreateRouteView(locationManager, settings)
+                // change to picture of route
+                    .tabItem {
+                        Label("Create", systemImage: "mappin.and.ellipse")
                 }
+            }
+            .navigationBarTitle("Welcome!")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        Text("")
+                        NavigationLink(destination: SettingsView()) {
+                            Image(systemName: "gearshape.fill")
+                                .font(.title)
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(settings:Settings())
     }
 }

@@ -10,13 +10,15 @@ import Firebase
 
 @main
 struct RunningApp: App {
+    @StateObject var settings = Settings()
+    
     init() {
         FirebaseApp.configure()
     }
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(settings:settings)
         }
     }
 }

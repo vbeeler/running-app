@@ -14,7 +14,6 @@ struct TerrainPickerView: View {
         VStack {
             HStack {
                 Text("Terrain Types")
-                    .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             

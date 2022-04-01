@@ -13,7 +13,6 @@ struct MapView: View {
     
     var body: some View {
         Map(coordinateRegion: $locationManager.region, showsUserLocation: true)
-            .ignoresSafeArea()
             .accentColor(Color(.systemRed))
     }
 }
