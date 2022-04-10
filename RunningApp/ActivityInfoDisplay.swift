@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ActivityInfoDisplay: View {
     var parameter: String
-    var value: Double
+    var value: String
     var units: String
     
     var body: some View {
@@ -31,6 +31,6 @@ struct ActivityInfoDisplay: View {
 
 struct ActivityInfoDisplay_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityInfoDisplay(parameter: "Speed", value: 1.2, units: "min/mile")
+        ActivityInfoDisplay(parameter: "Speed", value: "1.2", units: "min/mile")
     }
 }

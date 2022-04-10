@@ -22,6 +22,8 @@
 		26800FB527A4CEE70049C2DC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FB427A4CEE70049C2DC /* MapView.swift */; };
 		26800FBA27A596910049C2DC /* CreateRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FB927A596910049C2DC /* CreateRouteView.swift */; };
 		26800FBC27A597320049C2DC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FBB27A597320049C2DC /* Route.swift */; };
+		26CF0BD628033DE100D2BDD1 /* ActivityTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF0BD528033DE100D2BDD1 /* ActivityTimer.swift */; };
+		26CF0BDA28036E2500D2BDD1 /* MetricCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF0BD928036E2400D2BDD1 /* MetricCalculator.swift */; };
 		26DC4CF027F7573F00BE0EB4 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4CEF27F7573F00BE0EB4 /* RecordView.swift */; };
 		26DC4CF227F75FAA00BE0EB4 /* RunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4CF127F75FAA00BE0EB4 /* RunView.swift */; };
 		26DC4CF427F7817800BE0EB4 /* ActivityInfoDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4CF327F7817800BE0EB4 /* ActivityInfoDisplay.swift */; };
@@ -70,6 +72,8 @@
 		26800FB427A4CEE70049C2DC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		26800FB927A596910049C2DC /* CreateRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouteView.swift; sourceTree = "<group>"; };
 		26800FBB27A597320049C2DC /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		26CF0BD528033DE100D2BDD1 /* ActivityTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTimer.swift; sourceTree = "<group>"; };
+		26CF0BD928036E2400D2BDD1 /* MetricCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCalculator.swift; sourceTree = "<group>"; };
 		26DC4CEF27F7573F00BE0EB4 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		26DC4CF127F75FAA00BE0EB4 /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
 		26DC4CF327F7817800BE0EB4 /* ActivityInfoDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInfoDisplay.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				26DC4CEF27F7573F00BE0EB4 /* RecordView.swift */,
 				26DC4CF127F75FAA00BE0EB4 /* RunView.swift */,
 				26DC4CF327F7817800BE0EB4 /* ActivityInfoDisplay.swift */,
+				26CF0BD528033DE100D2BDD1 /* ActivityTimer.swift */,
+				26CF0BD928036E2400D2BDD1 /* MetricCalculator.swift */,
 			);
 			path = RunningApp;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				26DC4CF027F7573F00BE0EB4 /* RecordView.swift in Sources */,
 				26800FBA27A596910049C2DC /* CreateRouteView.swift in Sources */,
 				26DC4CF227F75FAA00BE0EB4 /* RunView.swift in Sources */,
+				26CF0BDA28036E2500D2BDD1 /* MetricCalculator.swift in Sources */,
 				2637B5DC27B5755B003CDD20 /* LocationManager.swift in Sources */,
 				26DC4CF427F7817800BE0EB4 /* ActivityInfoDisplay.swift in Sources */,
 				26800FBC27A597320049C2DC /* Route.swift in Sources */,
@@ -470,6 +477,7 @@
 				2637B5D827B4C848003CDD20 /* TerrainTypes.swift in Sources */,
 				2637B5DA27B4C9B8003CDD20 /* ChooseLocationView.swift in Sources */,
 				26800F8727A489920049C2DC /* RunningApp.swift in Sources */,
+				26CF0BD628033DE100D2BDD1 /* ActivityTimer.swift in Sources */,
 				26F37EE527DAFC8700DA8CDC /* Settings.swift in Sources */,
 				2637B5D227B4BE5B003CDD20 /* TerrainPickerView.swift in Sources */,
 			);

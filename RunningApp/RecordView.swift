@@ -13,7 +13,7 @@ struct RecordView: View {
     var body: some View {
         ZStack {
             MapView(locationManager: locationManager)
-            NavigationLink(destination: RunView(locationManager: locationManager)) {
+            NavigationLink(destination: RunView(locationManager: locationManager, activityTimer: ActivityTimer(locationManager: locationManager))) {
                 HStack {
                     Text("Run")
                         .fontWeight(.semibold)
