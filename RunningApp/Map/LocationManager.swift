@@ -41,12 +41,17 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locManager.startUpdatingLocation()
     }
     
-    func startTrackign() {
+    func startTracking() {
         self.isTracking = true
+    }
+    
+    func pauseTracking() {
+        self.isTracking = false
     }
     
     func stopTracking() {
         self.isTracking = false
+        self.distanceTraveled = 0
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -54,7 +59,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             if isTracking {
                 distanceTraveled += location.distance(from:locations.first!)
             }
-            region = MKCoordinateRegion(center: locations.first!.coordinate, span: region.span)
+            region = MKCoordinateRegion(center: locations.first!.coordinate, span: MapDetails.defaultSpan)
             location = locations.first!
             locationCoordinate = locations.first!.coordinate
             speed = locations.first!.speed

@@ -8,17 +8,15 @@
 import MapKit
 import SwiftUI
 
-struct MapView: View {
+struct MapView: UIViewRepresentable {
     @StateObject var locationManager : LocationManager
-    
-    var body: some View {
-        Map(coordinateRegion: $locationManager.region, showsUserLocation: true)
-            .accentColor(Color(.systemRed))
-    }
-}
 
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView(locationManager: LocationManager())
+    func makeUIView(context: Context) -> MKMapView {
+        MKMapView(frame: .zero)
+    }
+        
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.setRegion(locationManager.region, animated: true)
+        uiView.showsUserLocation = true
     }
 }

@@ -25,7 +25,7 @@ struct ActivityInfoDisplay: View {
         .padding()
         .overlay(RoundedRectangle(cornerRadius: 16)
                     .stroke(Color.blue, lineWidth: 4))
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 90)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 120)
     }
 }
 

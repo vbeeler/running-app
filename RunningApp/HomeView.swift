@@ -9,7 +9,7 @@ import MapKit
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var locationManager : LocationManager = LocationManager()
+    @StateObject private var locationManager : LocationManager = LocationManager()
     var settings : Settings
     
     var body: some View {

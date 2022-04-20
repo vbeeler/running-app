@@ -12,6 +12,7 @@
 		2637B5DA27B4C9B8003CDD20 /* ChooseLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */; };
 		2637B5DC27B5755B003CDD20 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5DB27B5755B003CDD20 /* LocationManager.swift */; };
 		2637B5E127BF1E3F003CDD20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2637B5E027BF1E3F003CDD20 /* GoogleService-Info.plist */; };
+		26671E572810BBB200825828 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26671E562810BBB200825828 /* MapKit.framework */; };
 		26800F8727A489920049C2DC /* RunningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800F8627A489920049C2DC /* RunningApp.swift */; };
 		26800F8B27A489960049C2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26800F8A27A489960049C2DC /* Assets.xcassets */; };
 		26800F8E27A489960049C2DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26800F8D27A489960049C2DC /* Preview Assets.xcassets */; };
@@ -59,6 +60,8 @@
 		2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationView.swift; sourceTree = "<group>"; };
 		2637B5DB27B5755B003CDD20 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2637B5E027BF1E3F003CDD20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		26671E552810BBB200825828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		26671E562810BBB200825828 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		26800F8327A489920049C2DC /* RunningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26800F8627A489920049C2DC /* RunningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningApp.swift; sourceTree = "<group>"; };
 		26800F8A27A489960049C2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26671E572810BBB200825828 /* MapKit.framework in Frameworks */,
 				F51EFB56C5D3A0AA1457651B /* Pods_RunningApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +123,7 @@
 		1583818EF605EBED3B5BCB07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26671E562810BBB200825828 /* MapKit.framework */,
 				DF02B14673AA04E8129D6EA9 /* Pods_RunningApp.framework */,
 				DAE2DB0C0DCE8414071E4F9D /* Pods_RunningApp_RunningAppUITests.framework */,
 				50E0B8BDE7F471C8C9318BC4 /* Pods_RunningAppTests.framework */,
@@ -151,6 +156,7 @@
 		26800F8527A489920049C2DC /* RunningApp */ = {
 			isa = PBXGroup;
 			children = (
+				26671E552810BBB200825828 /* Info.plist */,
 				2637B5E027BF1E3F003CDD20 /* GoogleService-Info.plist */,
 				26800F8627A489920049C2DC /* RunningApp.swift */,
 				26800FB227A4C6B10049C2DC /* HomeView.swift */,
@@ -644,6 +650,7 @@
 				DEVELOPMENT_TEAM = 66J4L3AWL3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunningApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow [Running App Name] access to your location to gain access to location based activities!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -676,6 +683,7 @@
 				DEVELOPMENT_TEAM = 66J4L3AWL3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunningApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow [Running App Name] access to your location to gain access to location based activities!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
