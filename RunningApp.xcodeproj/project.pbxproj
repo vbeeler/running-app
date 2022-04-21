@@ -13,6 +13,11 @@
 		2637B5DC27B5755B003CDD20 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637B5DB27B5755B003CDD20 /* LocationManager.swift */; };
 		2637B5E127BF1E3F003CDD20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2637B5E027BF1E3F003CDD20 /* GoogleService-Info.plist */; };
 		26671E572810BBB200825828 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26671E562810BBB200825828 /* MapKit.framework */; };
+		26671E592810C2F300825828 /* RouteCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26671E582810C2F300825828 /* RouteCalculator.swift */; };
+		26671E5B2810C45000825828 /* RouteRequestDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26671E5A2810C45000825828 /* RouteRequestDetails.swift */; };
+		26671E5D2810C4D800825828 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26671E5C2810C4D800825828 /* ActivityType.swift */; };
+		26671E5F2810C5E900825828 /* RouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26671E5E2810C5E900825828 /* RouteType.swift */; };
+		26671E612810CD4200825828 /* RouteSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26671E602810CD4200825828 /* RouteSelectionView.swift */; };
 		26800F8727A489920049C2DC /* RunningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800F8627A489920049C2DC /* RunningApp.swift */; };
 		26800F8B27A489960049C2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26800F8A27A489960049C2DC /* Assets.xcassets */; };
 		26800F8E27A489960049C2DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26800F8D27A489960049C2DC /* Preview Assets.xcassets */; };
@@ -62,6 +67,11 @@
 		2637B5E027BF1E3F003CDD20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26671E552810BBB200825828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26671E562810BBB200825828 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		26671E582810C2F300825828 /* RouteCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCalculator.swift; sourceTree = "<group>"; };
+		26671E5A2810C45000825828 /* RouteRequestDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRequestDetails.swift; sourceTree = "<group>"; };
+		26671E5C2810C4D800825828 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
+		26671E5E2810C5E900825828 /* RouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
+		26671E602810CD4200825828 /* RouteSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionView.swift; sourceTree = "<group>"; };
 		26800F8327A489920049C2DC /* RunningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26800F8627A489920049C2DC /* RunningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningApp.swift; sourceTree = "<group>"; };
 		26800F8A27A489960049C2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +141,66 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		26671E632810CE9C00825828 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				26F37EE427DAFC8700DA8CDC /* Settings.swift */,
+				26F37EE227D1A63000DA8CDC /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		26671E642810CED800825828 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				26800FB227A4C6B10049C2DC /* HomeView.swift */,
+				2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */,
+				26671E602810CD4200825828 /* RouteSelectionView.swift */,
+				26DC4CF127F75FAA00BE0EB4 /* RunView.swift */,
+				26DC4CEF27F7573F00BE0EB4 /* RecordView.swift */,
+				26800FB927A596910049C2DC /* CreateRouteView.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		26671E652810CF1B00825828 /* Terrain */ = {
+			isa = PBXGroup;
+			children = (
+				2637B5D127B4BE5B003CDD20 /* TerrainPickerView.swift */,
+				2637B5D727B4C848003CDD20 /* TerrainTypes.swift */,
+			);
+			path = Terrain;
+			sourceTree = "<group>";
+		};
+		26671E662810CF7300825828 /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				26CF0BD928036E2400D2BDD1 /* MetricCalculator.swift */,
+				26671E582810C2F300825828 /* RouteCalculator.swift */,
+			);
+			path = Calculators;
+			sourceTree = "<group>";
+		};
+		26671E672810CF9C00825828 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				26800FBB27A597320049C2DC /* Route.swift */,
+				26671E5A2810C45000825828 /* RouteRequestDetails.swift */,
+				26671E5E2810C5E900825828 /* RouteType.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		26671E682810D00400825828 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				26CF0BD528033DE100D2BDD1 /* ActivityTimer.swift */,
+				26671E5C2810C4D800825828 /* ActivityType.swift */,
+				26DC4CF327F7817800BE0EB4 /* ActivityInfoDisplay.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
 		26800F7A27A489920049C2DC = {
 			isa = PBXGroup;
 			children = (
@@ -156,25 +226,18 @@
 		26800F8527A489920049C2DC /* RunningApp */ = {
 			isa = PBXGroup;
 			children = (
-				26671E552810BBB200825828 /* Info.plist */,
 				2637B5E027BF1E3F003CDD20 /* GoogleService-Info.plist */,
+				26671E552810BBB200825828 /* Info.plist */,
 				26800F8627A489920049C2DC /* RunningApp.swift */,
-				26800FB227A4C6B10049C2DC /* HomeView.swift */,
-				26800FB927A596910049C2DC /* CreateRouteView.swift */,
-				26800FBB27A597320049C2DC /* Route.swift */,
-				26800FB627A4CFB30049C2DC /* Map */,
 				26800F8A27A489960049C2DC /* Assets.xcassets */,
+				26671E682810D00400825828 /* Activity */,
+				26671E662810CF7300825828 /* Calculators */,
+				26671E642810CED800825828 /* Main Views */,
+				26800FB627A4CFB30049C2DC /* Location */,
 				26800F8C27A489960049C2DC /* Preview Content */,
-				2637B5D127B4BE5B003CDD20 /* TerrainPickerView.swift */,
-				2637B5D727B4C848003CDD20 /* TerrainTypes.swift */,
-				2637B5D927B4C9B8003CDD20 /* ChooseLocationView.swift */,
-				26F37EE227D1A63000DA8CDC /* SettingsView.swift */,
-				26F37EE427DAFC8700DA8CDC /* Settings.swift */,
-				26DC4CEF27F7573F00BE0EB4 /* RecordView.swift */,
-				26DC4CF127F75FAA00BE0EB4 /* RunView.swift */,
-				26DC4CF327F7817800BE0EB4 /* ActivityInfoDisplay.swift */,
-				26CF0BD528033DE100D2BDD1 /* ActivityTimer.swift */,
-				26CF0BD928036E2400D2BDD1 /* MetricCalculator.swift */,
+				26671E672810CF9C00825828 /* Routes */,
+				26671E632810CE9C00825828 /* Settings */,
+				26671E652810CF1B00825828 /* Terrain */,
 			);
 			path = RunningApp;
 			sourceTree = "<group>";
@@ -204,13 +267,13 @@
 			path = RunningAppUITests;
 			sourceTree = "<group>";
 		};
-		26800FB627A4CFB30049C2DC /* Map */ = {
+		26800FB627A4CFB30049C2DC /* Location */ = {
 			isa = PBXGroup;
 			children = (
 				26800FB427A4CEE70049C2DC /* MapView.swift */,
 				2637B5DB27B5755B003CDD20 /* LocationManager.swift */,
 			);
-			path = Map;
+			path = Location;
 			sourceTree = "<group>";
 		};
 		81ED4D9ADB24B06D556208E1 /* Pods */ = {
@@ -472,19 +535,24 @@
 			files = (
 				26800FB327A4C6B10049C2DC /* HomeView.swift in Sources */,
 				26DC4CF027F7573F00BE0EB4 /* RecordView.swift in Sources */,
+				26671E5D2810C4D800825828 /* ActivityType.swift in Sources */,
 				26800FBA27A596910049C2DC /* CreateRouteView.swift in Sources */,
+				26671E592810C2F300825828 /* RouteCalculator.swift in Sources */,
 				26DC4CF227F75FAA00BE0EB4 /* RunView.swift in Sources */,
 				26CF0BDA28036E2500D2BDD1 /* MetricCalculator.swift in Sources */,
+				26671E5F2810C5E900825828 /* RouteType.swift in Sources */,
 				2637B5DC27B5755B003CDD20 /* LocationManager.swift in Sources */,
 				26DC4CF427F7817800BE0EB4 /* ActivityInfoDisplay.swift in Sources */,
 				26800FBC27A597320049C2DC /* Route.swift in Sources */,
 				26800FB527A4CEE70049C2DC /* MapView.swift in Sources */,
 				26F37EE327D1A63100DA8CDC /* SettingsView.swift in Sources */,
+				26671E612810CD4200825828 /* RouteSelectionView.swift in Sources */,
 				2637B5D827B4C848003CDD20 /* TerrainTypes.swift in Sources */,
 				2637B5DA27B4C9B8003CDD20 /* ChooseLocationView.swift in Sources */,
 				26800F8727A489920049C2DC /* RunningApp.swift in Sources */,
 				26CF0BD628033DE100D2BDD1 /* ActivityTimer.swift in Sources */,
 				26F37EE527DAFC8700DA8CDC /* Settings.swift in Sources */,
+				26671E5B2810C45000825828 /* RouteRequestDetails.swift in Sources */,
 				2637B5D227B4BE5B003CDD20 /* TerrainPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

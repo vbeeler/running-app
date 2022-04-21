@@ -12,7 +12,7 @@ struct CreateRouteView: View {
     var locationManager : LocationManager
     var settings : Settings
     
-    @State private var selectedActivity = "RUN"
+    @State private var selectedActivity = ActivityType.running
     @State private var milesSelection = 4
     @State private var hundredthMileSelection = 0
     @StateObject var terrainTypeSelections: TerrainTypes = TerrainTypes()
@@ -100,15 +100,27 @@ struct CreateRouteView: View {
                             }
                         }
                     }
-
-                    Section {
-                        Button("CREATE ROUTE") {
-                            // activate theme!
-                        }
+                    
+                    Button(action: {
+                        createRoute()
+                    }) {
+                        Text("CREATE ROUTE")
+                            .font(.title)
+                            .frame(minWidth: 60, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 35, maxHeight: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(Color.white)
                     }
+                    .background(Color.red)
+                    .cornerRadius(16)
                 }
             }
         }
+    }
+
+    func createRoute() {
+        let distance = Float(milesSelection) + 0.01 * Float(hundredthMileSelection);
+        let routeDetails = RouteRequestDetails(distance: distance, startingLocation: startingLocationSelection, endingLocation: endingLocationSelection, terrain: terrainTypeSelections, altitude: altitudeSelection, activity: selectedActivity, routeType: RouteType.outAndBack)
+        let bestRoute = RouteCalculator.calculateRoute(routeDetails: routeDetails, locationManager: locationManager)
+        print(bestRoute)
     }
     
     init(_ locationManager: LocationManager, _ settings: Settings) {
