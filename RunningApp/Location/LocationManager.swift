@@ -9,16 +9,17 @@ import CoreLocation
 import MapKit
 
 enum MapDetails {
-    static let defaultLocation = CLLocationCoordinate2D(latitude: 38.8977, longitude: 77.0365)
+    static let defaultStartingLocation = CLLocationCoordinate2D(latitude: 38.8977, longitude: 77.0365)
+    static let defaultEndingLocation = CLLocationCoordinate2D(latitude: 38.910838, longitude: 77.027028)
     static let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
 }
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let locManager = CLLocationManager()
     
-    @Published var region = MKCoordinateRegion(center: MapDetails.defaultLocation, span: MapDetails.defaultSpan)
+    @Published var region = MKCoordinateRegion(center: MapDetails.defaultStartingLocation, span: MapDetails.defaultSpan)
     @Published var location: CLLocation = CLLocation()
-    @Published var locationCoordinate: CLLocationCoordinate2D = MapDetails.defaultLocation
+    @Published var locationCoordinate: CLLocationCoordinate2D = MapDetails.defaultStartingLocation
     @Published var speed: Double
     @Published var isTracking: Bool
     @Published var distanceTraveled: Double

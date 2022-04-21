@@ -7,6 +7,7 @@
 
 import SwiftUI
 
-enum ActivityType {
-    case running, biking
+enum ActivityType: String, CaseIterable {
+    case running = "RUN"
+    case biking = "BIKE"
 }
