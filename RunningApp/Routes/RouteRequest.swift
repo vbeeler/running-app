@@ -8,11 +8,11 @@
 import MapKit
 import SwiftUI
 
-class RouteRequestDetails {
+class RouteRequest {
     let distance:Float
     let startingLocation:CLLocationCoordinate2D
     let endingLocation:CLLocationCoordinate2D
-    let terrain:TerrainTypes
+    let terrain:TerrainSelection
     let altitude:Float
     let activity:ActivityType
     let routeType:RouteType
@@ -20,7 +20,7 @@ class RouteRequestDetails {
     init(distance: Float,
          startingLocation: CLLocationCoordinate2D,
          endingLocation: CLLocationCoordinate2D,
-         terrain: TerrainTypes,
+         terrain: TerrainSelection,
          altitude: Float,
          activity: ActivityType,
          routeType: RouteType)

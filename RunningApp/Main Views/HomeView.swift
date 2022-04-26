@@ -11,6 +11,7 @@ import SwiftUI
 struct HomeView: View {
     @StateObject private var locationManager : LocationManager = LocationManager()
     var settings : Settings
+    @StateObject private var locationService : LocationService = LocationService()
     
     var body: some View {
         NavigationView {
@@ -20,7 +21,7 @@ struct HomeView: View {
                         Label("Record", systemImage: "record.circle")
                 }
                 
-                CreateRouteView(locationManager, settings)
+                CreateRouteView(locationManager, settings, locationService)
                 // change to picture of route
                     .tabItem {
                         Label("Create", systemImage: "mappin.and.ellipse")

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TerrainPickerView: View {
-    @ObservedObject var terrainTypes : TerrainTypes
+    @ObservedObject var terrainTypes : TerrainSelection
     
     var body: some View{
         VStack {
@@ -76,6 +76,6 @@ struct TerrainPickerView: View {
 
 struct TerrainPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        TerrainPickerView(terrainTypes: TerrainTypes())
+        TerrainPickerView(terrainTypes: TerrainSelection())
     }
 }

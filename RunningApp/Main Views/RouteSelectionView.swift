@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RouteSelectionView: View {
     @StateObject var locationManager : LocationManager
-    var routeRequestDetails: RouteRequestDetails
+    var routeRequest: RouteRequest
   
     var body: some View {
         MapView(locationManager: locationManager)

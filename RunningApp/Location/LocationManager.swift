@@ -56,15 +56,17 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if !locations.isEmpty {
-            if isTracking {
-                distanceTraveled += location.distance(from:locations.first!)
-            }
-            region = MKCoordinateRegion(center: locations.first!.coordinate, span: MapDetails.defaultSpan)
-            location = locations.first!
-            locationCoordinate = locations.first!.coordinate
-            speed = locations.first!.speed
+        guard let firstLocation = locations.first else {
+          return
         }
+        
+        if isTracking {
+            distanceTraveled += location.distance(from:firstLocation)
+        }
+        region = MKCoordinateRegion(center: firstLocation.coordinate, span: MapDetails.defaultSpan)
+        location = firstLocation
+        locationCoordinate = firstLocation.coordinate
+        speed = firstLocation.speed
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

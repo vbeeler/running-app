@@ -11,15 +11,17 @@ import MapKit
 struct CreateRouteView: View {
     var locationManager : LocationManager
     var settings : Settings
+    @ObservedObject var locationService: LocationService
     
     @State private var selectedActivity = ActivityType.running
     @State private var milesSelection = 4
     @State private var hundredthMileSelection = 0
-    @StateObject var terrainTypeSelections: TerrainTypes = TerrainTypes()
+    @StateObject var terrainTypeSelections: TerrainSelection = TerrainSelection()
     @State private var startingLocationSelection : CLLocationCoordinate2D = MapDetails.defaultStartingLocation
     @State private var endingLocationSelection : CLLocationCoordinate2D = MapDetails.defaultEndingLocation
     @State private var altitudeSelection : Float = 0
     @State private var isEditingAltitude = false
+    @State private var isLocationViewPresented = false
     
     private var activities = ActivityType.allCases
     private var miles = [Int](0..<100)
@@ -70,12 +72,11 @@ struct CreateRouteView: View {
                         }
                         
                         Section {
-                            NavigationLink(destination: ChooseLocationView(locationManager: locationManager, startingLocation: startingLocationSelection, endingLocation: endingLocationSelection)) {
-                                HStack {
-                                    Text("Locations")
-                                    Spacer()
-                                    Image(systemName: "location.circle.fill")
-                                }
+                            Button("Locations") {
+                                isLocationViewPresented = true
+                            }
+                            .sheet(isPresented: $isLocationViewPresented) {
+                                ChooseLocationView(locationManager: locationManager, startingLocation: $startingLocationSelection, endingLocation: $endingLocationSelection, locationService: locationService, locationType: LocationType.starting)
                             }
                         }
                         
@@ -101,31 +102,25 @@ struct CreateRouteView: View {
                         }
                     }
                     
-                    Button(action: {
-                        createRoute()
-                    }) {
-                        Text("CREATE ROUTE")
-                            .font(.title)
-                            .frame(minWidth: 60, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 35, maxHeight: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .foregroundColor(Color.white)
+                    NavigationLink(destination: RouteView(routeRequest: RouteRequest(distance: Float(milesSelection) + 0.01 * Float(hundredthMileSelection), startingLocation: startingLocationSelection, endingLocation: endingLocationSelection, terrain: terrainTypeSelections, altitude: altitudeSelection, activity: selectedActivity, routeType: RouteType.pointToPoint))) {
+                        HStack {
+                            Text("CREATE ROUTE")
+                                .font(.title)
+                                .frame(minWidth: 60, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 35, maxHeight: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .foregroundColor(Color.white)
+                        }
                     }
-                    .background(Color.red)
-                    .cornerRadius(16)
+                        .background(Color.red)
+                        .cornerRadius(16)
                 }
             }
         }
     }
-
-    func createRoute() {
-        let distance = Float(milesSelection) + 0.01 * Float(hundredthMileSelection);
-        let routeDetails = RouteRequestDetails(distance: distance, startingLocation: startingLocationSelection, endingLocation: endingLocationSelection, terrain: terrainTypeSelections, altitude: altitudeSelection, activity: selectedActivity, routeType: RouteType.pointToPoint)
-        let bestRoute = RouteCalculator.calculateRoute(routeDetails: routeDetails, locationManager: locationManager)
-        print(bestRoute)
-    }
     
-    init(_ locationManager: LocationManager, _ settings: Settings) {
+    init(_ locationManager: LocationManager, _ settings: Settings, _ locationService: LocationService) {
         self.locationManager = locationManager
         self.settings = settings
+        self.locationService = locationService
         
         //this will change the font size
         UISegmentedControl.appearance().setTitleTextAttributes([.font : UIFont.preferredFont(forTextStyle: .largeTitle)], for: .normal)
@@ -139,6 +134,6 @@ struct CreateRouteView: View {
 
 struct CreateRouteView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateRouteView(LocationManager(), Settings())
+        CreateRouteView(LocationManager(), Settings(), LocationService())
     }
 }

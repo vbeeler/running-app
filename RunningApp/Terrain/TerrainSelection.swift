@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class TerrainTypes : ObservableObject{
+class TerrainSelection : ObservableObject{
     @Published var road : Bool = true
     @Published var dirt : Bool = true
     @Published var grass : Bool = true
