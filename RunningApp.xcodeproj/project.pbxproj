@@ -27,6 +27,10 @@
 		26800FB527A4CEE70049C2DC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FB427A4CEE70049C2DC /* MapView.swift */; };
 		26800FBA27A596910049C2DC /* CreateRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FB927A596910049C2DC /* CreateRouteView.swift */; };
 		26800FBC27A597320049C2DC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26800FBB27A597320049C2DC /* Route.swift */; };
+		268976072826BE7A00CDBB34 /* RouteCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268976062826BE7A00CDBB34 /* RouteCalculator.swift */; };
+		268976092826CBF800CDBB34 /* LocationCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268976082826CBF800CDBB34 /* LocationCalculator.swift */; };
+		2689760B2827025700CDBB34 /* MKMultiPoint+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689760A2827025700CDBB34 /* MKMultiPoint+Ext.swift */; };
+		2689760D282DBE5E00CDBB34 /* MyPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689760C282DBE5D00CDBB34 /* MyPlacemark.swift */; };
 		26CF0BD628033DE100D2BDD1 /* ActivityTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF0BD528033DE100D2BDD1 /* ActivityTimer.swift */; };
 		26CF0BDA28036E2500D2BDD1 /* MetricCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF0BD928036E2400D2BDD1 /* MetricCalculator.swift */; };
 		26DBCF0A281764980014364E /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DBCF09281764970014364E /* RouteView.swift */; };
@@ -86,6 +90,10 @@
 		26800FB427A4CEE70049C2DC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		26800FB927A596910049C2DC /* CreateRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouteView.swift; sourceTree = "<group>"; };
 		26800FBB27A597320049C2DC /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		268976062826BE7A00CDBB34 /* RouteCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCalculator.swift; sourceTree = "<group>"; };
+		268976082826CBF800CDBB34 /* LocationCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCalculator.swift; sourceTree = "<group>"; };
+		2689760A2827025700CDBB34 /* MKMultiPoint+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMultiPoint+Ext.swift"; sourceTree = "<group>"; };
+		2689760C282DBE5D00CDBB34 /* MyPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacemark.swift; sourceTree = "<group>"; };
 		26CF0BD528033DE100D2BDD1 /* ActivityTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTimer.swift; sourceTree = "<group>"; };
 		26CF0BD928036E2400D2BDD1 /* MetricCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCalculator.swift; sourceTree = "<group>"; };
 		26DBCF09281764970014364E /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				26CF0BD928036E2400D2BDD1 /* MetricCalculator.swift */,
+				268976062826BE7A00CDBB34 /* RouteCalculator.swift */,
+				268976082826CBF800CDBB34 /* LocationCalculator.swift */,
 			);
 			path = Calculators;
 			sourceTree = "<group>";
@@ -278,6 +288,8 @@
 				26DBCF09281764970014364E /* RouteView.swift */,
 				26DBCF0B281778FC0014364E /* LocationService.swift */,
 				26DBCF0D2817816D0014364E /* LocationType.swift */,
+				2689760A2827025700CDBB34 /* MKMultiPoint+Ext.swift */,
+				2689760C282DBE5D00CDBB34 /* MyPlacemark.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -539,6 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2689760B2827025700CDBB34 /* MKMultiPoint+Ext.swift in Sources */,
 				26DBCF0A281764980014364E /* RouteView.swift in Sources */,
 				26800FB327A4C6B10049C2DC /* HomeView.swift in Sources */,
 				26DC4CF027F7573F00BE0EB4 /* RecordView.swift in Sources */,
@@ -555,7 +568,10 @@
 				26800FB527A4CEE70049C2DC /* MapView.swift in Sources */,
 				26F37EE327D1A63100DA8CDC /* SettingsView.swift in Sources */,
 				26671E612810CD4200825828 /* RouteSelectionView.swift in Sources */,
+				2689760D282DBE5E00CDBB34 /* MyPlacemark.swift in Sources */,
 				2637B5D827B4C848003CDD20 /* TerrainSelection.swift in Sources */,
+				268976092826CBF800CDBB34 /* LocationCalculator.swift in Sources */,
+				268976072826BE7A00CDBB34 /* RouteCalculator.swift in Sources */,
 				2637B5DA27B4C9B8003CDD20 /* ChooseLocationView.swift in Sources */,
 				26800F8727A489920049C2DC /* RunningApp.swift in Sources */,
 				26CF0BD628033DE100D2BDD1 /* ActivityTimer.swift in Sources */,

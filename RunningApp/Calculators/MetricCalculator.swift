@@ -12,6 +12,10 @@ class MetricCalculator {
         return meters / 1609.344
     }
     
+    static func toMeters(miles:Double) -> Double {
+        return miles * 1609.344
+    }
+    
     static func toMinutesPerMile(metersPerSecond: Double) -> Double {
         if metersPerSecond > 0 {
             return 1 / (metersPerSecond * 60 / 1609)

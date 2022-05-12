@@ -7,6 +7,8 @@
 
 import SwiftUI
 
-enum RouteType {
-    case outAndBack, loop, pointToPoint
+enum RouteType: String, CaseIterable {
+    case outAndBack = "Out and Back"
+    case loop = "Loop"
+    case pointToPoint = "Point to Point"
 }

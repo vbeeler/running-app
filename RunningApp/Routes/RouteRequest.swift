@@ -9,19 +9,20 @@ import MapKit
 import SwiftUI
 
 class RouteRequest {
-    let distance:Float
+    let distance:Double
     let startingLocation:CLLocationCoordinate2D
     let endingLocation:CLLocationCoordinate2D
     let terrain:TerrainSelection
-    let altitude:Float
+    let altitude:Double
     let activity:ActivityType
+    let transportType:MKDirectionsTransportType
     let routeType:RouteType
     
-    init(distance: Float,
+    init(distance: Double,
          startingLocation: CLLocationCoordinate2D,
          endingLocation: CLLocationCoordinate2D,
          terrain: TerrainSelection,
-         altitude: Float,
+         altitude: Double,
          activity: ActivityType,
          routeType: RouteType)
     {
@@ -32,5 +33,10 @@ class RouteRequest {
         self.altitude = altitude
         self.activity = activity
         self.routeType = routeType
+        if activity == ActivityType.biking {
+            transportType = .automobile
+        } else {
+            transportType = .walking
+        }
     }
 }

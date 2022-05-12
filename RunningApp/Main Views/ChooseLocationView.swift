@@ -12,17 +12,48 @@ struct ChooseLocationView: View {
     @StateObject var locationManager : LocationManager
     @Binding var startingLocation : CLLocationCoordinate2D
     @Binding var endingLocation : CLLocationCoordinate2D
+    @Binding var routeType : RouteType
     @StateObject var locationService : LocationService
     @State var locationType : LocationType
     
     @Environment(\.dismiss) var dismiss
     @State var isShowingEndLocationView = false
     @State var isShowingHomeView = false
+    
+    let routeTypes = RouteType.allCases
   
     var body: some View {
         VStack {
             Form {
                 Text("Choose your \(locationType.rawValue) location.")
+                
+                if locationType == LocationType.starting {
+                    Button("Current Location") {
+                        self.startingLocation = locationManager.locationCoordinate
+                        locationType = LocationType.ending
+                        locationService.queryFragment = ""
+                    }
+                } else {
+                    Button("Out and Back") {
+                        self.endingLocation = startingLocation
+                        self.routeType = RouteType.outAndBack
+                        isShowingEndLocationView = false
+                        dismiss()
+                    }
+                    
+                    Button("Loop") {
+                        self.endingLocation = startingLocation
+                        self.routeType = RouteType.loop
+                        isShowingEndLocationView = false
+                        dismiss()
+                    }
+                    
+                    Button("Current Location") {
+                        self.endingLocation = locationManager.locationCoordinate
+                        isShowingEndLocationView = false
+                        dismiss()
+                    }
+                }
                 
                 Section(header: Text("Location Search")) {
                     ZStack(alignment: .trailing) {

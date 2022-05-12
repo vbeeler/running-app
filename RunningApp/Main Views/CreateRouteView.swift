@@ -19,7 +19,8 @@ struct CreateRouteView: View {
     @StateObject var terrainTypeSelections: TerrainSelection = TerrainSelection()
     @State private var startingLocationSelection : CLLocationCoordinate2D = MapDetails.defaultStartingLocation
     @State private var endingLocationSelection : CLLocationCoordinate2D = MapDetails.defaultEndingLocation
-    @State private var altitudeSelection : Float = 0
+    @State private var routeType : RouteType = RouteType.pointToPoint
+    @State private var altitudeSelection : Double = 0
     @State private var isEditingAltitude = false
     @State private var isLocationViewPresented = false
     
@@ -44,7 +45,7 @@ struct CreateRouteView: View {
                                 Text("Distance")
                                 
                                 Picker("Miles", selection: $milesSelection) {
-                                    ForEach(0 ..< miles.count) {
+                                    ForEach(0 ..< 100) {
                                         Text("\($0)")
                                     }
                                 }
@@ -76,7 +77,7 @@ struct CreateRouteView: View {
                                 isLocationViewPresented = true
                             }
                             .sheet(isPresented: $isLocationViewPresented) {
-                                ChooseLocationView(locationManager: locationManager, startingLocation: $startingLocationSelection, endingLocation: $endingLocationSelection, locationService: locationService, locationType: LocationType.starting)
+                                ChooseLocationView(locationManager: locationManager, startingLocation: $startingLocationSelection, endingLocation: $endingLocationSelection, routeType: $routeType, locationService: locationService, locationType: LocationType.starting)
                             }
                         }
                         
@@ -102,7 +103,7 @@ struct CreateRouteView: View {
                         }
                     }
                     
-                    NavigationLink(destination: RouteView(routeRequest: RouteRequest(distance: Float(milesSelection) + 0.01 * Float(hundredthMileSelection), startingLocation: startingLocationSelection, endingLocation: endingLocationSelection, terrain: terrainTypeSelections, altitude: altitudeSelection, activity: selectedActivity, routeType: RouteType.pointToPoint))) {
+                    NavigationLink(destination: RouteView(routeRequest: RouteRequest(distance: Double(milesSelection) + 0.01 * Double(hundredthMileSelection), startingLocation: startingLocationSelection, endingLocation: endingLocationSelection, terrain: terrainTypeSelections, altitude: altitudeSelection, activity: selectedActivity, routeType: routeType))) {
                         HStack {
                             Text("CREATE ROUTE")
                                 .font(.title)
